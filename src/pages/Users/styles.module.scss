@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      input[type="text"] {
+        padding: 10px;
+        outline: none;
+        border: 1px solid #ccc;
+      }
+    }
+  }
+  svg {
+    font-size: 25px;
+    height: 28px;
+
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,65 @@
+table {
+  height: 100%;
+  width: 100%;
+  margin: 5px;
+  border-collapse: collapse;
+  tr {
+    &:nth-child(even) {
+      background: #ddd;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.5);
+    }
+
+    th {
+      padding: 10px;
+      border-top: 1px solid #ccc;
+      text-align: left;
+    }
+    td {
+      padding: 20px;
+      border-top: 1px solid #ccc;
+
+      text-align: left;
+      input[type="text"] {
+        border: none;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 5px;
+        background: inherit;
+      }
+      &:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 150px;
+        button {
+          padding: 5px 10px;
+
+          outline: none;
+          border: none;
+          background: #666;
+          border-radius: 5px;
+          cursor: pointer;
+          color: #fff;
+          &:hover {
+            background: #333;
+          }
+        }
+        svg {
+          cursor: pointer;
+          fill: #444;
+          transform: scale(1.25);
+        }
+      }
+    }
+  }
+}
+
+.active {
+  background: #808080 !important;
+}
+.editable {
+  background: #fff !important;
+  outline: 2px solid #000;
+}
