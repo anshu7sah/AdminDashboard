@@ -100,6 +100,7 @@ export default function Users() {
     setUpdatedData((prevData) => {
       return tempArr;
     });
+    setCheckedUser([]);
   };
 
   const searchSubmitHandler = (e) => {
@@ -118,8 +119,12 @@ export default function Users() {
               {!isFetching && (
                 <p>
                   {checkedUser.length} of{" "}
-                  {updatedData ? updatedData.length : users.length} row(s)
-                  selected
+                  {searchResults
+                    ? searchResults.length
+                    : updatedData
+                    ? updatedData.length
+                    : users.length}{" "}
+                  row(s) selected
                 </p>
               )}
               <form onSubmit={searchSubmitHandler}>
