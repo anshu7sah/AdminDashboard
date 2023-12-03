@@ -29,7 +29,6 @@ export default function Users() {
   const page = (e) => {
     setCurrentPage(e);
   };
-  console.log(currentPage);
 
   useEffect(() => {
     if (!isFetching) {
@@ -61,8 +60,15 @@ export default function Users() {
         : null;
       setPaginatedSearch((p) => paginatedResults);
     }
-    console.log(searchResults);
-  }, [search, users, isFetching, updatedData, currentPage, resultPerPage]); //eslint-disable-line
+  }, [
+    search,
+    users,
+    isFetching,
+    updatedData,
+    currentPage,
+    resultPerPage,
+    searchResults,
+  ]); //eslint-disable-line
 
   const onSave = ({ name, email, id, role }) => {
     let newUser = [...users].map((e) => {
