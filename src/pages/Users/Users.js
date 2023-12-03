@@ -29,6 +29,7 @@ export default function Users() {
   const page = (e) => {
     setCurrentPage(e);
   };
+  console.log(currentPage);
 
   useEffect(() => {
     if (!isFetching) {
@@ -39,7 +40,7 @@ export default function Users() {
       );
       setFiltered(newData);
     }
-  }, [currentPage, isFetching, updatedData, users]);
+  }, [currentPage, isFetching, updatedData, users, resultPerPage]);
 
   useEffect(() => {
     if (!isFetching) {
@@ -51,12 +52,8 @@ export default function Users() {
             value.toLowerCase().includes(search.toLowerCase())
         );
       });
-      setSearchResults(
-        (p) => foundUser,
-        () => console.log("anshu")
-      );
+      setSearchResults((p) => foundUser);
 
-      setCurrentPage(1);
       const startIndex = resultPerPage * (currentPage - 1);
       const endIndex = startIndex + resultPerPage;
       const paginatedResults = searchResults
@@ -65,7 +62,7 @@ export default function Users() {
       setPaginatedSearch((p) => paginatedResults);
     }
     console.log(searchResults);
-  }, [search, users, isFetching, updatedData, currentPage, searchResults]);
+  }, [search, users, isFetching, updatedData, currentPage, resultPerPage]); //eslint-disable-line
 
   const onSave = ({ name, email, id, role }) => {
     let newUser = [...users].map((e) => {

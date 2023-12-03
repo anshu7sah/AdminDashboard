@@ -20,8 +20,8 @@ const Pagination = ({ page, productsCount, resultPerPage }) => {
     }
   };
   const numberHandler = (e) => {
-    setCurrentPage(Number(e.target.innerHTML));
     page(Number(e.target.innerHTML));
+    setCurrentPage(Number(e.target.innerHTML));
   };
   return (
     <div className={styles.pagination}>
